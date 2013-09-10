@@ -1,0 +1,16 @@
+body {
+  padding-top: 50px;
+  background: url('../assets/img/bg.png');
+}
+
+footer.signature {
+  margin-top: 40px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    background: url('../assets/img/bg_@2x.png');
+  }
+}
