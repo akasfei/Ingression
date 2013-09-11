@@ -1,0 +1,31 @@
+{
+  "name": "Ingression",
+  "version": "0.1.1",
+  "description": "jQuery plugin that asks users to join the Resistance",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akasfei/Ingression"
+  },
+  "author": "SFEI Systems Inc.",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://choosealicense.com/licenses/mit/"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-less": "~0.7.0"
+  }
+}
