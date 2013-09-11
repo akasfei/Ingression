@@ -1,10 +1,9 @@
 !function ($) {
 
   $(function(){
-
+    $('body').ingression('init');
     $('.i-activemsg').click(function (e){
-      $('.i-background').toggleClass('active');
-      $('body').ingression();
+      $('body').ingression('start');
     });
 })
 

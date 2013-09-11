@@ -1,9 +1,3 @@
-/**
-* Ingression v0.1.1
-* Ingression by SFEI Systems Inc.
-*/
-if (!jQuery) { throw new Error("jQuery is required") }
-
 (function( $ ) {
   "use strict";
 

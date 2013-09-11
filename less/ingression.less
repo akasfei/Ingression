@@ -1,7 +1,13 @@
-@font-face {
+@font-face
+{
   font-family: 'ingress';
   src: url('../fonts/coda.ttf');
 }
+
+@bg-color: #17191a;
+@ingress-blue: #09aeed;
+@res-logo: data-uri('image/png;base64','../img/resistance.png');
+
 .i-activemsg {
   display: inline-block;
   padding: 0.4em 1.2em;
@@ -12,15 +18,18 @@
   border: 1px solid #ccc;
   background-color: #fff;
 }
+
 .i-activemsg.fixed {
   position: fixed;
   top: 60px;
   right: 20px;
 }
+
 .i-activemsg:hover,
 .i-activemsg:active {
-  background-color: #d9d9d9;
+  background-color: darken(#fff, 15%);
 }
+
 .i-background {
   display: block;
   position: fixed;
@@ -30,7 +39,7 @@
   right: 0;
   width: 100%;
   height: 0;
-  background: #17191a;
+  background: @bg-color;
   z-index: 9999;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -38,9 +47,11 @@
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+
 .i-background.active {
   height: 100%;
 }
+
 .i-scene {
   font-family: 'ingress', sans-serif;
   text-align: left;
@@ -53,6 +64,7 @@
   background: transparent;
   border: none;
 }
+
 .i-scene.active:after {
   content: '_';
   font-weight: bold;
@@ -62,18 +74,22 @@
   -o-animation: blink-caret 1s step-end infinite;
   animation: blink-caret 1s step-end infinite;
 }
+
 .i-scene-0 {
   padding-top: 60px;
   font-family: monospace;
 }
+
 .i-scene-1 {
-  position: relative;
+  position:relative;
   left: 40px;
 }
+
 .i-bgcontainer.active .i-spinner-center,
 .i-bgcontainer.active .i-spinner-ring {
   opacity: 1;
 }
+
 .i-resistance-logo-50 {
   position: absolute;
   left: 50%;
@@ -81,9 +97,11 @@
   top: 10px;
   opacity: 1;
 }
+
 .i-bgcontainer.active .i-resistance-logo-50 {
   opacity: 0;
 }
+
 .i-spinner {
   display: none;
   position: relative;
@@ -91,15 +109,18 @@
   width: 240px;
   height: 240px;
 }
+
 .i-spinner.active {
   display: block;
 }
+
 .i-spinner > img {
   position: absolute;
   margin-left: -50%;
   width: 100%;
   height: 100%;
 }
+
 .i-spinner-center {
   -webkit-animation: rotate-cw 20s linear infinite;
   -moz-animation: rotate-cw 20s linear infinite;
@@ -107,6 +128,7 @@
   -o-animation: rotate-cw 20s linear infinite;
   animation: rotate-cw 20s linear infinite;
 }
+
 .i-spinner-ring {
   -webkit-animation: rotate-cw 20s linear infinite reverse;
   -moz-animation: rotate-cw 20s linear infinite reverse;
@@ -114,6 +136,7 @@
   -o-animation: rotate-cw 20s linear infinite reverse;
   animation: rotate-cw 20s linear infinite reverse;
 }
+
 .i-join {
   display: inline-block;
   font-family: 'ingress', sans-serif;
@@ -122,151 +145,131 @@
   margin: 8px auto;
   text-decoration: none !important;
   color: #fff !important;
-  background: #09aeed;
-  border: 1px solid #0678a3;
+  background: @ingress-blue;
+  border: 1px solid darken(@ingress-blue, 15%);
   padding: 0.2em 0.6em;
 }
+
 .i-join:hover,
 .i-join:active {
-  border-color: #03425a;
-  background-color: #0678a3;
+  border-color: darken(@ingress-blue, 30%);
+  background-color: darken(@ingress-blue, 15%);
 }
+
 .i-join:active {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
+
 .i-join:before {
   content: '';
   display: inline-block;
   width: 24px;
   height: 32px;
   vertical-align: middle;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAW5JREFUeNrsVu1xwyAMdXsZgBEyApkgZYImG7BB6gnqTMAI7gjdINnA6QbdINnAlXqPnELBH4T+i+7eGUtCzwhZUFUPmSN93zd9WjrCEugG/BoZcxHhORHqhN5ibAg64uNCRYzggudLoN8J3ZrwFdiPYu4ggQ/+HtHv8WTbZkran0fs5glC4xVWwVgJvckh8Et1tGm/uaZYJwQzGFewuWDOaBUdMLaEM2Ajvn/sPDesomSK6Cs/8MXfhBal6QN2rIPNwHf+Hoi0fKIsFaChu6Yrd5OZ5ELYBv9GzTq23VtFUl4T42IEdWJchkDmeizvuSvIksXIf+FEU6uLEyC4b3Aqh2BqikxuimIE2vcfIQdgKJ06cUbcOClCi3aggXN4ZMWCw4/nqilNr0UsKya/xQjgw9LOPZ8liT+Lbwiyg8sy9SR479BJZXB3703DB2qwR0rcPmyp68w1FTJ1pe9MVhSS/Ze+4kv3cUUtKj8CDAC/vZcGtWXwGwAAAABJRU5ErkJggg==');
+  background-image: @res-logo;
   background-repeat: no-repeat;
   background-position: top left;
 }
+
 @-webkit-keyframes rotate-cw {
-  0% {
-    transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
+  0% { 
+    transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
   }
 }
 @-moz-keyframes rotate-cw {
-  0% {
-    transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
+  0% { 
+    transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
   }
 }
 @-ms-keyframes rotate-cw {
-  0% {
-    transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
+  0% { 
+    transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
   }
 }
 @-o-keyframes rotate-cw {
-  0% {
-    transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
+  0% { 
+    transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
   }
 }
 @keyframes rotate-cw {
-  0% {
-    transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
+  0% { 
+    transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
   }
 }
+
 @-webkit-keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #ffffff;
-  }
+    from, to { color: transparent }
+    50% { color: white }
 }
 @-moz-keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #ffffff;
-  }
+    from, to { color: transparent }
+    50% { color: white }
 }
 @-ms-keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #ffffff;
-  }
+    from, to { color: transparent }
+    50% { color: white }
 }
 @-o-keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #ffffff;
-  }
+    from, to { color: transparent }
+    50% { color: white }
 }
 @keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #ffffff;
-  }
+    from, to { color: transparent }
+    50% { color: white }
 }
